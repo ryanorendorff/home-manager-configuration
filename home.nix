@@ -104,6 +104,12 @@ in {
     zoom-us
   ];
 
+  programs.agda = {
+    enable = true;
+    package = unstable-pkgs.agda;
+    extraPackages = p: with p; [standard-library];
+  };
+
   programs.direnv = {
     enable = true;
     enableZshIntegration = true;
