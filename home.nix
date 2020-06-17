@@ -4,8 +4,7 @@ let
 
   # Helper Functions ##########################################################
 
-  load-pkgs = x: import (pkgs.fetchFromGitHub x) {config.allowUnfree = true;};
-
+  load-pkgs = x: import (pkgs.fetchFromGitHub x) { config.allowUnfree = true; };
 
   # Nixpkgs sources ########################################################
 
@@ -114,7 +113,7 @@ in {
   programs.agda = {
     enable = true;
     package = unstable-pkgs.agda;
-    extraPackages = p: with p; [standard-library];
+    extraPackages = p: with p; [ standard-library ];
   };
 
   programs.direnv = {
@@ -325,7 +324,6 @@ in {
   };
 
   programs.vim = { enable = true; };
-
 
   home.file = {
     ".ghc/ghci.conf".source = ./dotfiles/ghci.conf;
