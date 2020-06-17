@@ -24,6 +24,13 @@ let
     sha256 = "1fxszxpqaws61iys56kqpmxmaw7xmj2d7lwprklydvbgys7ywm06";
   };
 
+  # Home Manager settings ##################################################
+
+  hm-path = (import (fetchTarball {
+    url =
+      "https://github.com/rycee/home-manager/archive/bf7297d55cb0edc1917cbb2c46be27dcd230db43.tar.gz";
+    sha256 = "13wb7q9c7v2zz5cz3x09ixmlzj8zimmn4qm64npr1vgszi2zlal4";
+  }) { pkgs = stable-pkgs; }).path;
 
   # Packages ###############################################################
 
@@ -333,5 +340,5 @@ in {
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.home-manager.path = "$HOME/code/home-manager";
+  programs.home-manager.path = "${hm-path}";
 }
