@@ -261,9 +261,6 @@ in {
     oh-my-zsh = {
       enable = true;
 
-      # The custom theme comes from here.
-      custom = "${zsh_custom}";
-
       plugins = [
         "colored-man-pages"
         "fasd"
