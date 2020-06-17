@@ -128,13 +128,6 @@ in {
     lfs.enable = true;
     userName = "Ryan Orendorff";
     userEmail = "12442942+ryanorendorff@users.noreply.github.com";
-
-    extraConfig = {
-      core = {
-        # editor = "emacsclient -nw ";
-        # pager = "${stable-pkgs.gitAndTools.diff-so-fancy}/bin/diff-so-fancy | less --tabs=4 -RFX";
-      };
-    };
   };
 
   programs.emacs.enable = true;
