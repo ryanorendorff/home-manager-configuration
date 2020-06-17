@@ -118,6 +118,7 @@ in {
 
   programs.direnv = {
     enable = true;
+    enableNixDirenvIntegration = true;
     enableZshIntegration = true;
     enableFishIntegration = true;
   };
@@ -327,7 +328,6 @@ in {
 
   home.file = {
     ".ghc/ghci.conf".source = ./dotfiles/ghci.conf;
-    ".config/direnv/direnvrc".source = ./dotfiles/direnvrc;
   };
 
   home.sessionVariables = {
