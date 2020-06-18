@@ -101,7 +101,6 @@ in {
     tig
     tilix
     tldr
-    tmux
     unzip
     virtualbox
     wget
@@ -115,6 +114,8 @@ in {
     package = unstable-pkgs.agda;
     extraPackages = p: with p; [ standard-library ];
   };
+
+  programs.oh-my-tmux.enable = true;
 
   programs.direnv = {
     enable = true;

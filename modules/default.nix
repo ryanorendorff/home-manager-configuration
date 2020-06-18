@@ -8,7 +8,7 @@ let
 
   loadModule = file: { condition ? true }: { inherit file condition; };
 
-  allModules = [ (loadModule ./agda { }) ];
+  allModules = [ (loadModule ./agda { }) (loadModule ./oh-my-tmux { }) ];
 
   modules = map (getAttr "file") (filter (getAttr "condition") allModules);
 in { imports = modules; }
