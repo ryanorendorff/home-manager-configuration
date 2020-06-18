@@ -35,12 +35,12 @@ in {
 
   options = {
     programs.oh-my-tmux = {
-      enable = mkEnableOption "oh-my-tmux";
+      enable = mkEnableOption "Oh My Tmux! Pretty & versatile tmux configuration / customization made with love";
 
       configFile = mkOption {
         type = types.path;
         default = ./tmux.conf.local;
-        # example = ./path/to/tmux.conf.local;
+        example = ./path/to/tmux.conf.local;
         description = "Local oh-my-tmux configuration";
       };
     };
