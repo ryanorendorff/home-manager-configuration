@@ -16,7 +16,7 @@ let
     src = builtins.fetchTarball {
       url =
         "https://github.com/gpakosz/.tmux/archive/d6f0f647dd68561ed010f83d8d226383aebfb805.tar.gz";
-      sha256 = "1bmhd0v3ndg0mb5gby9s4yb22zjxn69z1q6h6jrrhykw3m4jk4s5";
+      sha256 = "1jbfjwajnyb8j886fmjbf57qfnj9swv0prj3lfdd61zv8hikn5li";
     };
 
     phases = [ "unpackPhase" "installPhase" ];
@@ -37,8 +37,8 @@ in {
     programs.oh-my-tmux = {
       enable = mkEnableOption "oh-my-tmux";
 
-      localConf = mkOption {
-        type = path;
+      configFile = mkOption {
+        type = types.path;
         default = ./tmux.conf.local;
         # example = ./path/to/tmux.conf.local;
         description = "Local oh-my-tmux configuration";
@@ -48,8 +48,8 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = [ pkgs.tmux ];
-    home.file.".tmux.conf".file = "${oh-my-tmux}" + ./.tmux.conf;
-    home.file.".tmux.conf.local".file = cfg.localConfig;
+    home.file.".tmux.conf".source = oh-my-tmux + "/.tmux.conf";
+    home.file.".tmux.conf.local".source = cfg.configFile;
   };
 }
 
