@@ -1,13 +1,12 @@
-Ryan's Home Configuration Mess
-==============================
+Ryan's Home Manager Configuration
+=================================
 
-This is whatever Ryan has randomly set up. May not work for you, may also not
-work for him. :-)
+This home manager configuration is set up to enable a few things.
 
-
-Some random points to note
---------------------------
-
-- For this to work correctly the file `dotfiles/irssi-password` will need to be
-  created. This is not totally secure in the sense the password is stored in the
-  nix store, but at least the password is not in the repo.
+- New modules are defined in `modules`. Most should be attempted to be
+  upstreamed at a later point in time.
+- Custom modules (for modules that cannot be made open source) are located
+  in `./custom-moldules`
+- New packages in `./packages` are applied as an overlay to 
+- Ideally make it easy for others to use the supplied modules in a consistent
+  and simple way.
