@@ -103,6 +103,7 @@ in {
     tldr
     unzip
     virtualbox
+    watchexec
     wget
     xclip
     zip
@@ -247,11 +248,12 @@ in {
       # Set LS_COLORS by file type
       source ${fish-ls-colors}/share/fish-ls-colors/LS_COLORS.fish
 
-      # Fish theme
-      eval (${unstable-pkgs.starship}/bin/starship init fish)
-
       set PAGER "less"
     '';
+  };
+
+  programs.starship = {
+    enable = true;
   };
 
   programs.zsh = {
