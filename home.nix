@@ -55,9 +55,9 @@ let
     sha256 = "10gd0rpvvvm8wjn1s1ld1kwr6lis96y4zq28vl1dvbwbixaxy90h";
   };
 
-  zsh-ls-colors = pkgs.callPackage ./pkgs/shells/zsh/zsh-ls-colors { };
+  zsh-ls-colors = pkgs.callPackage ./pkgs/zsh-ls-colors { };
 
-  fish-ls-colors = pkgs.callPackage ./pkgs/shells/fish/fish-ls-colors { };
+  fish-ls-colors = pkgs.callPackage ./pkgs/fish-ls-colors { };
 
 in {
 
