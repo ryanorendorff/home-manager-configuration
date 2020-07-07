@@ -55,10 +55,6 @@ let
     sha256 = "10gd0rpvvvm8wjn1s1ld1kwr6lis96y4zq28vl1dvbwbixaxy90h";
   };
 
-  zsh-ls-colors = pkgs.callPackage ./pkgs/zsh-ls-colors { };
-
-  fish-ls-colors = pkgs.callPackage ./pkgs/fish-ls-colors { };
-
 in {
 
   imports = [ ./modules ];
@@ -246,7 +242,7 @@ in {
       end
 
       # Set LS_COLORS by file type
-      source ${fish-ls-colors}/share/fish-ls-colors/LS_COLORS.fish
+      source ${pkgs.fish-ls-colors}/share/fish-ls-colors/LS_COLORS.fish
 
       set PAGER "less"
     '';
@@ -295,7 +291,7 @@ in {
     shellAliases = { "open" = "xdg-open"; };
 
     initExtra = ''
-      source ${zsh-ls-colors}/share/zsh-ls-colors/LS_COLORS.zsh
+      source ${pkgs.zsh-ls-colors}/share/zsh-ls-colors/LS_COLORS.zsh
     '';
 
   };
@@ -335,4 +331,8 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.home-manager.path = "${hm-path}";
+
+  nixpkgs.overlays = [
+    (import ./pkgs)
+  ];
 }
