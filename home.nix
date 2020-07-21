@@ -153,16 +153,6 @@ in {
         };
       }
 
-      # {
-      #   name = "emacs";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "oh-my-fish";
-      #     repo = "plugin-emacs";
-      #     rev = "21297223af8d567387527daa050f426a9bf6265d";
-      #     sha256 = "05jg2lvyixb68c3qy6zjny0ai78gv0dpdym9r8j4jv5qvq9a1jfr";
-      #   };
-      # }
-
       {
         name = "fasd";
         src = pkgs.fetchFromGitHub {
@@ -182,19 +172,6 @@ in {
           sha256 = "1dh813841qsycz1c08imj2jz3byzc02qrq12dacs5fwf080r2n4a";
         };
       }
-
-      # This does not work because it needs a patch to call the vi-mode-impl.py
-      # function with an interpreter. Additionally seems to have a problem where
-      # escape is overloaded to end the terminal.
-      # {
-      #   name = "vi-mode";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "oh-my-fish";
-      #     repo = "plugin-vi-mode";
-      #     rev = "dc38ec253eacb88242c296d2eeacfc3802d27210";
-      #     sha256 = "130cqgv6f973j4ipbdk60adgf6h9kly2x3l1521idd5nmc7dy6qb";
-      #   };
-      # }
 
     ];
 
