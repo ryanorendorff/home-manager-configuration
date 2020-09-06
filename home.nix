@@ -2,9 +2,10 @@
 
 let
 
-  # Helper Functions ##########################################################
+  # Helper Functions #######################################################
 
   load-pkgs = x: import (pkgs.fetchFromGitHub x) { config.allowUnfree = true; };
+
 
   # Nixpkgs sources ########################################################
 
@@ -22,6 +23,7 @@ let
     rev = "72faa59a1575e78a359254d8eac8d8ddf1b78366";
     sha256 = "1fxszxpqaws61iys56kqpmxmaw7xmj2d7lwprklydvbgys7ywm06";
   };
+
 
   # Home Manager settings ##################################################
 
@@ -83,7 +85,7 @@ in {
   ];
 
   programs.agda = {
-    enable = true;
+    enable = false;
     package = unstable-pkgs.agda;
     extraPackages = p: with p; [ standard-library ];
   };
@@ -222,8 +224,6 @@ in {
         "vi-mode"
         "zsh-syntax-highlighting"
       ];
-
-      theme = "ryan-nix";
 
     };
 
