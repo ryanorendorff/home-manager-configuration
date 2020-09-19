@@ -13,15 +13,15 @@ let
   stable-pkgs = load-pkgs {
     owner = "nixos";
     repo = "nixpkgs-channels";
-    rev = "82b5f87fcc710a99c47c5ffe441589807a8202af";
-    sha256 = "0wz07gzapdj95h9gf0rdc2ywgd7fnaivnf4vhwyh5gx24dblg7q8";
+    rev = "faf5bdea5d9f0f9de26deaa7e864cdcd3b15b4e8";
+    sha256 = "1sgfyxi4wckivnbniwmg4l6n9v5z6v53c5467d7k7pr2h6nwssfn";
   };
 
   unstable-pkgs = load-pkgs {
     owner = "nixos";
     repo = "nixpkgs";
-    rev = "72faa59a1575e78a359254d8eac8d8ddf1b78366";
-    sha256 = "1fxszxpqaws61iys56kqpmxmaw7xmj2d7lwprklydvbgys7ywm06";
+    rev = "4418b3796e386e031dbfd301f6108492c8500b88";
+    sha256 = "1461kby5mxhfg3g4xfxpmfz4s2k0xhd4aivs95rln7af9md26h29";
   };
 
 
