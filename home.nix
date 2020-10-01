@@ -121,6 +121,23 @@ in {
 
       # Make gitignore files easily.
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
+
+      # From https://nixos.wiki/wiki/Fish#pythonEnv
+      pythonEnv = {
+        argumentNames = "pythonVersion";
+        description = "start a nix-shell with the given python packages";
+        body = ''
+          if set -q argv[2]
+            set argv $argv[2..-1]
+          end
+
+          for el in $argv
+            set ppkgs $ppkgs "python"$pythonVersion"Packages.$el"
+          end
+
+          nix-shell -p $ppkgs
+        '';
+      };
     };
 
     shellAbbrs = {
