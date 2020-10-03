@@ -195,7 +195,6 @@ in {
     ];
 
     interactiveShellInit = ''
-
       # Use keychain to handle ssh keys
       if status --is-interactive
         ${stable-pkgs.keychain}/bin/keychain --quiet --nogui --agents ssh id_rsa
@@ -222,6 +221,11 @@ in {
 
   programs.starship = {
     enable = true;
+    settings = {
+      character = {
+        symbol = "⊢ ";
+      };
+    };
   };
 
   programs.zsh = {
