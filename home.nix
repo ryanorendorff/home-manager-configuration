@@ -212,6 +212,9 @@ in {
           ${stable-pkgs.fortune}/bin/fortune
       end
 
+      # Thefuck needs to make some shell function.
+      thefuck --alias | source
+
       # Set LS_COLORS by file type
       source ${pkgs.fish-ls-colors}/share/fish-ls-colors/LS_COLORS.fish
 
