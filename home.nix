@@ -71,7 +71,6 @@ in {
     ripgrep
     shellcheck
     slack
-    thefuck
     tig
     tilix
     tldr
@@ -89,6 +88,8 @@ in {
     package = unstable-pkgs.agda;
     extraPackages = p: with p; [ standard-library ];
   };
+
+  programs.thefuck.enable = true;
 
   programs.oh-my-tmux.enable = true;
 
@@ -211,9 +212,6 @@ in {
       function fish_greeting
           ${stable-pkgs.fortune}/bin/fortune
       end
-
-      # Thefuck needs to make some shell function.
-      thefuck --alias | source
 
       # Set LS_COLORS by file type
       source ${pkgs.fish-ls-colors}/share/fish-ls-colors/LS_COLORS.fish
