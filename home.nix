@@ -271,7 +271,7 @@ in {
 
   };
 
-  programs.irssi = {
+  programs.irssi = if builtins.pathExists (./dotfiles/irssi-password) then {
     enable = true;
     networks = {
       freenode = {
@@ -289,7 +289,7 @@ in {
         channels = { nixos.autoJoin = true; };
       };
     };
-  };
+  } else {enable = false;};
 
   programs.vim = { enable = true; };
 
