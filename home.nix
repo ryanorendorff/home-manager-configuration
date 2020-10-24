@@ -6,7 +6,6 @@ let
 
   load-pkgs = x: import (pkgs.fetchFromGitHub x) { config.allowUnfree = true; };
 
-
   # Nixpkgs sources ########################################################
 
   # Rev nixos-20.03
@@ -23,7 +22,6 @@ let
     rev = "4418b3796e386e031dbfd301f6108492c8500b88";
     sha256 = "1461kby5mxhfg3g4xfxpmfz4s2k0xhd4aivs95rln7af9md26h29";
   };
-
 
   # Home Manager settings ##################################################
 
@@ -222,11 +220,7 @@ in {
 
   programs.starship = {
     enable = true;
-    settings = {
-      character = {
-        symbol = "⊢ ";
-      };
-    };
+    settings = { character = { symbol = "⊢ "; }; };
   };
 
   programs.zsh = {
@@ -289,13 +283,13 @@ in {
         channels = { nixos.autoJoin = true; };
       };
     };
-  } else {enable = false;};
+  } else {
+    enable = false;
+  };
 
   programs.vim = { enable = true; };
 
-  home.file = {
-    ".ghc/ghci.conf".source = ./dotfiles/ghci.conf;
-  };
+  home.file = { ".ghc/ghci.conf".source = ./dotfiles/ghci.conf; };
 
   home.sessionVariables = {
     EDITOR = "vim";
@@ -307,7 +301,5 @@ in {
   programs.home-manager.enable = true;
   programs.home-manager.path = "${hm-path}";
 
-  nixpkgs.overlays = [
-    (import ./pkgs)
-  ];
+  nixpkgs.overlays = [ (import ./pkgs) ];
 }
