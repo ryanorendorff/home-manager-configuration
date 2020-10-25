@@ -11,16 +11,16 @@ let
   # Rev nixos-20.03
   stable-pkgs = load-pkgs {
     owner = "nixos";
-    repo = "nixpkgs-channels";
-    rev = "faf5bdea5d9f0f9de26deaa7e864cdcd3b15b4e8";
-    sha256 = "1sgfyxi4wckivnbniwmg4l6n9v5z6v53c5467d7k7pr2h6nwssfn";
+    repo = "nixpkgs";
+    rev = "7c2a362b58a1c2ba72d24aa3869da3b1a91d39e1";
+    sha256 = "0gl4xndyahasa9dv5mi3x9w8s457wl2xh9lcldizcn1irjvkrzs4";
   };
 
   unstable-pkgs = load-pkgs {
     owner = "nixos";
     repo = "nixpkgs";
-    rev = "4418b3796e386e031dbfd301f6108492c8500b88";
-    sha256 = "1461kby5mxhfg3g4xfxpmfz4s2k0xhd4aivs95rln7af9md26h29";
+    rev = "605b1ecb0cd19048615f7d8b5dc7015303a13f28";
+    sha256 = "1qipyj92h29nfjdw3pykkj27ywbkglbg5smisda0k78al7wfhizi";
   };
 
   # Home Manager settings ##################################################
