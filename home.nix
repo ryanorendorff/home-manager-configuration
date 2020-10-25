@@ -220,7 +220,13 @@ in {
 
   programs.starship = {
     enable = true;
-    settings = { character = { symbol = "⊢ "; }; };
+    package = unstable-pkgs.starship;
+    settings = {
+      character = {
+        success_symbol = "[Γ ⊢ ](bold green)";
+        error_symbol = "[Γ ⊢ ](bold red)";
+      };
+    };
   };
 
   programs.zsh = {
