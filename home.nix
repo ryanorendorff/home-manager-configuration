@@ -8,27 +8,28 @@ let
 
   # Nixpkgs sources ########################################################
 
-  # Rev nixos-20.03
+  # Rev nixos-20.09
   stable-pkgs = load-pkgs {
     owner = "nixos";
     repo = "nixpkgs";
-    rev = "7c2a362b58a1c2ba72d24aa3869da3b1a91d39e1";
-    sha256 = "0gl4xndyahasa9dv5mi3x9w8s457wl2xh9lcldizcn1irjvkrzs4";
+    rev = "9da0758c1cd4724cf09fd48fee11413f88c48c8d";
+    sha256 = "1n8wy4a5hfrx3fqxlxkwnganb5y1l450v36255jj58j7fkcys6ss";
   };
 
   unstable-pkgs = load-pkgs {
     owner = "nixos";
     repo = "nixpkgs";
-    rev = "605b1ecb0cd19048615f7d8b5dc7015303a13f28";
-    sha256 = "1qipyj92h29nfjdw3pykkj27ywbkglbg5smisda0k78al7wfhizi";
+    rev = "c476262dcd9109168c99f3de2e9e94504807c7c5";
+    sha256 = "0b7s76176ckdgwrywpygzr8217qpx3arkw7xshnfc6d7cqrnhq48";
   };
+
 
   # Home Manager settings ##################################################
 
   hm-path = (import (fetchTarball {
     url =
-      "https://github.com/rycee/home-manager/archive/bf7297d55cb0edc1917cbb2c46be27dcd230db43.tar.gz";
-    sha256 = "13wb7q9c7v2zz5cz3x09ixmlzj8zimmn4qm64npr1vgszi2zlal4";
+      "https://github.com/nix-community/home-manager/archive/63f299b3347aea183fc5088e4d6c4a193b334a41.tar.gz";
+    sha256 = "0iksjch94wfvyq0cgwv5wq52j0dc9cavm68wka3pahhdvjlxd3js";
   }) { pkgs = stable-pkgs; }).path;
 
 in {
